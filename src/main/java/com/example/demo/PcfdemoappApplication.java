@@ -15,7 +15,7 @@ public class PcfdemoappApplication {
 		String app_ver = "3";
 		String app_index = System.getenv("CF_INSTANCE_INDEX");
 		String app_host = System.getenv("CF_INSTANCE_IP");
-		return "Pivotal"
+		return "Mixi"
 				+"\r\n"
 				+"Current app version = " + app_ver
 				+"\r\n"

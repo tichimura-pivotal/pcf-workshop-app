@@ -58,6 +58,8 @@ jobs:
       - name: pcfapp
       caches:
       - path: pcfapp/m2   
+      outputs:
+      - name: pcfapp2
       run:
         path: bash
         args:
@@ -68,7 +70,10 @@ jobs:
           rm -rf ~/.m2
           ln -fs $(pwd)/m2 ~/.m2
           mvn clean package
+          mkdir ../pcfapp2/target
+          cp ./target/demo-1.0.0-BUILD-SNAPSHOT.jar ../pcfapp2/target/demo-1.0.0-BUILD-SNAPSHOT.jar
+          cp ./manifest.yml ../pcfapp2/
   - put: deploy-to-cf
     params: 
-      manifest: pcfapp/manifest.yml
+      manifest: pcfapp2/manifest.yml
       current_app_name: pcfapp-10
