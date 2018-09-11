@@ -1,8 +1,8 @@
 ---
 applications:
-- name: pcfdpp-1
+- name: pcfdpp-10
   memory: 1G
-  host: pcfapp-1
+  host: pcfapp-10
   domain: apps.pcflab.jp
   instances: 1
   path: target/demo-1.0.0-BUILD-SNAPSHOT.jar
